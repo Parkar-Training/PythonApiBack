@@ -42,7 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'user',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'advanceProfile',
+    'Posts',
+    'frndlst'
+
 ]
 CORS_ORIGIN_ALLOW_ALL= True
 
@@ -62,7 +66,7 @@ ROOT_URLCONF = 'socialmedia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

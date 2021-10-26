@@ -1,28 +1,19 @@
 
 #----api.py code----
-from django.views.decorators.http import require_http_methods
-from requests import post
-from rest_framework.decorators import renderer_classes
-from rest_framework.renderers import JSONRenderer
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.generics import RetrieveAPIView
 from rest_framework import status
-from rest_framework.authtoken.views import ObtainAuthToken
-from rest_framework.authtoken.models import Token
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 
-import json
-from socialmedia import *
-from .loginSerialization import *
-from .serialization import *
 from .user_serialization import *
 from .OtpSerialization import *
+from django.shortcuts import render
 
 import random,smtplib
+
 
 '''
 class UserD(RetrieveAPIView):
@@ -46,7 +37,7 @@ class UserD(RetrieveAPIView):
 #-------------login code-------------------------------
 
 class UserD(APIView):
-    print("\n\ninside userD\n\n")
+    #print("\n\ninside userD\n\n")
     def post(self,request):
             print("received value",self.request.data)
             getQueryString = self.request.data
@@ -302,6 +293,7 @@ def User(request,id=0):
 #-----------------------signup end------------------------
 
 
+
 #-------------------OTP-----------------------------------
 
 
@@ -420,3 +412,22 @@ class UserDetail(APIView):
             print("enter same password again to confirm")
             return post()
 '''
+
+
+
+#--------SIGNIN Page render
+
+
+
+def signin(request):
+    return render(request, 'sign_in.html')
+
+#----------SIGNUP Page Render
+
+def sign_up(request):
+    return render(request, 'sign_up.html')
+
+
+
+
+

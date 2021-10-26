@@ -30,3 +30,4 @@ class users_new(models.Model):
 
     # class Meta:
       #  db_table= 'mydb'
+
